@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <header class="row">
+        <div class="col-12 col-md-6" id="header-text">
+            <h2>Rent a car here!</h2>
+            <h5>RENT IT.</h5>
+        </div>
+        <!-- Header Image -->
+        <div class="col-12 col-md-6">
+            <img src="../../static/images/Vehicle_Sale.png" alt="Vehicle Sale Image" class="header-image">
+        </div>
+    </header>
+
+    <!-- Start of Middle Section -->
+    <section class="row">
+        <div class="col-12" id="middle-text">
+            <h2>Check out our Collection of Cars!</h2>
+            <p>You'll love our collection!</p>
+        </div>
+    </section>
+
+    <!-- Collection of Features Section -->
+    <section class="row" id="features">
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/Electric_Car.png" alt="Electric Car" class="features-image">
+            <h4>Want to reduce the carbon footprint of your trip?</h4>
+            <p>We got electric cars!</p>
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/OffRoad.png" alt="Off Road Car" class="features-image">
+            <h4>Want to go off-roading?</h4>
+            <p>Check out our offroad cars and trucks!</p>
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/carAccident.png" alt="Car in an accident" class="features-image">
+            <h4>Need a temporary car?</h4>
+            <p>We gotchu.</p>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-12 col-md-6">
+            <img src="../../static/images/OrderCar.png" alt="Car Order" class="features-image-big">
+        </div>
+        <div class="col-12 col-md-6">
+            <h4>Order a car rental with ease!</h4>
+            <p>Our process is streamlined for your convenience.
+            </p>
+        </div>
+    </section>
+</div>
+{% endblock content %}

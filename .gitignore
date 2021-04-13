@@ -1,0 +1,4 @@
+car_inventory_env
+__pycache__
+migrations
+.env

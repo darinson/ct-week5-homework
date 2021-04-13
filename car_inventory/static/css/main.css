@@ -1,0 +1,46 @@
+/* Navigation Bar */
+
+.navbar{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between; 
+}
+
+.menu-items{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+}
+
+.menu-items>ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+
+/* Feature Images */
+.row{
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+}
+
+.features-image{
+    width: 50%;
+    max-width: 75%;
+    margin-left: 3vw;
+}
+
+.features-image-big{
+    width: 50%;
+    max-width: 75%;
+    margin-left: 3vw;
+}
