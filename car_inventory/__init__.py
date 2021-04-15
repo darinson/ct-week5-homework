@@ -11,6 +11,8 @@ from .models import db as root_db, login_manager, ma
 
 from flask_cors import CORS #prevent malware from possible sources. 
 
+from .helpers import JSONEncoder
+
 appCar = Flask(__name__)
 
 appCar.config.from_object(Config)
@@ -28,5 +30,7 @@ login_manager.login_view = 'auth.signin'
 ma.init_app(appCar)
 
 CORS(appCar)
+
+appCar.json_encoder = JSONEncoder
 
 from car_inventory import models
