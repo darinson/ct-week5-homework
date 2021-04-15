@@ -14,5 +14,12 @@
     </header>
 
     <h2>The User Profile</h2>
+    <h3>Here are your profile details: {{ current_user.email }}</h3>
+    <!-- from models.py, when logged in the flask_login package sets the logged user as current_user -->
+
+    <ul class="list-group">
+        <li class="list-group-item">Email: {{ current_user.email }}</li>
+        <li class="list-group-item">Token: {{ current_user.token }}</li>
+    </ul>
 </div>
 {% endblock content %}
