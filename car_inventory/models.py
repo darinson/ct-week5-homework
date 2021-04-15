@@ -8,11 +8,18 @@ from werkzeug.security import generate_password_hash, check_password_hash
 #Import for Secrets Module (Provided by Python)
 import secrets
 
-#Instantiate sqlalchemy 
+#Import for Login Manager and the User Mixin
+from flask_login import LoginManager, UserMixin
 
+#Instantiate SQLAlchemy and LoginManager
 db = SQLAlchemy()
+login_manager = LoginManager()
 
-class User(db.Model):
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
+    
+class User(db.Model, UserMixin):
     id = db.Column(db.String, primary_key = True)
     first_name = db.Column(db.String(150), nullable = True, default = '')
     last_name = db.Column(db.String(150), nullable = True, default = '')

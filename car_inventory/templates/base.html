@@ -31,9 +31,20 @@
                 <a href="{{ url_for('site.profile') }}">
                     <li>Profile</li>
                 </a>
+                <!-- User Auth Check for SignIn/SignOut -->
+                {% if current_user.is_authenticated %}
+                <!-- template tag -->
+                <a href="{{ url_for('auth.logout') }}">
+                    <li>Log Out</li>
+                </a>
+                {% else %}
+                <a href="{{ url_for('auth.signin') }}">
+                    <li>Sign In</li>
+                </a>
                 <a href="{{ url_for('auth.signup') }}">
                     <li>Sign Up</li>
                 </a>
+                {% endif %}
             </ul>
 
         </div>

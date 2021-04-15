@@ -5,7 +5,7 @@ from .site.routes import site
 from .authentication.routes import auth
 
 from flask_migrate import Migrate
-from .models import db as root_db
+from .models import db as root_db, login_manager
 
 appCar = Flask(__name__)
 
@@ -16,5 +16,8 @@ appCar.register_blueprint(auth)
 
 root_db.init_app(appCar)
 migrate = Migrate(appCar, root_db)
+
+login_manager.init_app(appCar)
+login_manager.login_view = 'auth.signin'
 
 from car_inventory import models
