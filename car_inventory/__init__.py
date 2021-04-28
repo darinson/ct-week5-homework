@@ -13,24 +13,24 @@ from flask_cors import CORS #prevent malware from possible sources.
 
 from .helpers import JSONEncoder
 
-appCar = Flask(__name__)
+app = Flask(__name__)
 
-appCar.config.from_object(Config)
+app.config.from_object(Config)
 
-appCar.register_blueprint(site)
-appCar.register_blueprint(auth)
-appCar.register_blueprint(api)
+app.register_blueprint(site)
+app.register_blueprint(auth)
+app.register_blueprint(api)
 
-root_db.init_app(appCar)
-migrate = Migrate(appCar, root_db)
+root_db.init_app(app)
+migrate = Migrate(app, root_db)
 
-login_manager.init_app(appCar)
+login_manager.init_app(app)
 login_manager.login_view = 'auth.signin'
 
-ma.init_app(appCar)
+ma.init_app(app)
 
-CORS(appCar)
+CORS(app)
 
-appCar.json_encoder = JSONEncoder
+app.json_encoder = JSONEncoder
 
 from car_inventory import models
