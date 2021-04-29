@@ -53,9 +53,9 @@ class Car(db.Model):
     id = db.Column(db.String, primary_key = True)
     make = db.Column(db.String(150))
     model = db.Column(db.String(150))
-    year = db.Column(db.Numeric(precision=4))
+    year = db.Column(db.String(150))
     condition = db.Column(db.String(100))
-    cost = db.Column(db.Numeric(precision=10, scale=2))
+    cost = db.Column(db.String(100))
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
     
     def __init__(self,make,model,year,condition,cost,user_token,id = ''):
